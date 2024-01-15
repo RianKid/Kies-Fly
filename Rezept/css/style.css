@@ -1,0 +1,308 @@
+:root {
+  --primary: #46f536;
+  --bg: #ffffff;
+  --background: #ffffff3d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: #000000;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 7%;
+  background-color: var(--primary);
+  border-bottom: 1px solid #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-menu a {
+  color: #000000;
+  display: inline-block;
+}
+
+.navbar .navbar-inhalt {
+  position: absolute;
+  background-color: var(--primary);
+  top: 100%;
+  left: -100%;
+  height: 100vh;
+  width: 10rem;
+  border: 1px solid;
+}
+
+.navbar .navbar-inhalt a {
+  color: #000000;
+}
+
+.navbar .navbar-inhalt.verstecken {
+  left: 0;
+}
+
+.navbar .navbar .navbar-menu a:hover {
+  color: var(--bg);
+}
+
+.navbar .navbar-logo .navbar-img {
+  height: 50px;
+  width: 50px;
+  alt: "Logo";
+}
+
+.navbar .navbar-logo a:hover {
+  color: var(--bg);
+}
+
+.navbar .navbar-extra a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+.navbar .navbar-extra a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.1rem solid var(--bg);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar .navbar-extra a:hover::after {
+  transform: scaleX(0.5);
+}
+.navbar .navbar-extra a:hover {
+  color: var(--bg);
+}
+
+/* Rezept container 1 */
+.rezept .rezept-container-1 {
+  position: relative;
+  background-color: grey;
+  top: 10rem;
+  width: 30%;
+  height: 300px;
+}
+
+#preis {
+  position: relative;
+  color: black;
+  bottom: 5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  left: 4rem;
+}
+
+.rezept-container-1-beschreibung {
+  position: relative;
+  background-color: grey;
+  top: 4rem;
+  height: 300px;
+}
+
+#beschreibung {
+  font-size: 20px;
+}
+
+/* Rezept container 2*/
+.rezept-container-2-zutaten {
+  position: relative;
+  background-color: grey;
+  left: 40rem;
+  bottom: 8.75rem;
+  width: 20%;
+  height: 658px;
+}
+
+#text-zutaten {
+  position: relative;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+#zutaten {
+  position: relative;
+  left: 10px;
+  font-size: 20px;
+}
+
+/* Rezept container 3*/
+.rezept-container-3-zubreitung {
+  position: relative;
+  background-color: grey;
+  bottom: 10rem;
+  left: 70rem;
+  bottom: 49.78rem;
+  width: 40%;
+  height: 658px;
+}
+
+#text-zubreitung {
+  position: relative;
+  padding: 1rem;
+  font-size: 2rem;
+}
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 7%;
+  background-color: var(--primary);
+  border-top: 1px solid #000000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+footer .socialmedia {
+  text-align: left;
+  padding: 1rem 0;
+}
+
+footer .socialmedia a {
+  color: #000000;
+  display: inline-block;
+  margin: 0.1rem;
+}
+
+footer .socialmedia a:hover {
+  color: var(--bg);
+}
+
+footer .customore-care {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer .customore-care p {
+  color: #000000;
+  display: inline-block;
+  margin: 0.1rem;
+}
+
+/* Media Queries ?????*/
+
+/* Laptop */
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+
+  /* Adjustments for the recipe containers */
+  .rezept .rezept-container-1, 
+  .rezept-container-2-zutaten,
+  .rezept-container-3-zubreitung {
+    width: 90%;
+    left: 5%;
+    height: auto;
+  }
+
+  .rezept-container-1-beschreibung,
+  .rezept-container-2-zutaten,
+  .rezept-container-3-zubreitung {
+    position: static;
+    background-color: grey;
+    top: initial;
+    left: initial;
+    right: initial;
+    bottom: initial;
+  }
+
+  #zutaten, #zubreitung {
+    font-size: 1rem;
+  }
+
+  #preis {
+    font-size: 2rem;
+  }
+
+  /* Adjustments for navbar */
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar .navbar-logo .navbar-img {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 75%;
+    width: 75%;
+    height: 75%;
+  }
+
+  /* Similar adjustments as above, but with more reduction in size */
+  .rezept .rezept-container-1, 
+  .rezept-container-2-zutaten,
+  .rezept-container-3-zubreitung {
+    width: 100%;
+    left: 0;
+  }
+
+  #zutaten, #zubreitung {
+    font-size: 0.9rem;
+  }
+
+  #preis {
+    font-size: 1.5rem;
+  }
+
+  .navbar .navbar-logo .navbar-img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+/* Mobile Phone */
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  /* Further adjustments for smaller screens */
+  .rezept .rezept-container-1, 
+  .rezept-container-2-zutaten,
+  .rezept-container-3-zubreitung {
+    width: 100%;
+    left: 0;
+  }
+
+  #zutaten, #zubreitung {
+    font-size: 0.8rem;
+  }
+
+  #preis {
+    font-size: 1.2rem;
+  }
+
+  .navbar .navbar-logo .navbar-img {
+    height: 25px;
+    width

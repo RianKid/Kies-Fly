@@ -1,0 +1,295 @@
+:root {
+  --primary: #46f536;
+  --bg: #ffffff;
+  --background: #ffffff3d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: #000000;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 7%;
+  background-color: var(--primary);
+  border-bottom: 1px solid #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-menu a {
+  color: #000000;
+  display: inline-block;
+}
+
+.navbar .navbar-inhalt {
+  position: absolute;
+  background-color: var(--primary);
+  top: 100%;
+  left: -100%;
+  height: 100vh;
+  width: 10rem;
+  border: 1px solid;
+}
+
+.navbar .navbar-inhalt a {
+  color: #000000;
+}
+
+.navbar .navbar-inhalt.verstecken {
+  left: 0;
+}
+
+.navbar .navbar .navbar-menu a:hover {
+  color: var(--bg);
+}
+
+.navbar .navbar-logo .navbar-img {
+  height: 50px;
+  width: 50px;
+  alt: "Logo";
+}
+
+.navbar .navbar-logo a:hover {
+  color: var(--bg);
+}
+
+.navbar .navbar-extra a {
+  color: #000000;
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+.navbar .navbar-extra a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.1rem solid var(--bg);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar .navbar-extra a:hover::after {
+  transform: scaleX(0.5);
+}
+.navbar .navbar-extra a:hover {
+  color: var(--bg);
+}
+
+/* Hauptbild */
+.hauptbild {
+  height: 50%;
+  display: flex;
+}
+#hauptbild-logo {
+  display: block;
+  margin: auto;
+  width: 1000px;
+  height: 500px;
+  top: 250px;
+  opacity: 0.5;
+}
+/* Menu */
+#menu-bild-brownies {
+  position: relative;
+  left: 250px;
+  width: 300px;
+  height: 250px;
+}
+
+#menu-bild-cookies {
+  position: relative;
+  left: 1000px;
+  width: 300px;
+  height: 250px;
+}
+
+#button-brownies {
+  position: relative;
+  font-size: 12px;
+  color: black;
+  background: peachpuff;
+  border: 1px solid black;
+  border-radius: 12px;
+  margin: 1rem;
+  padding: 10px;
+  left: 350px;
+  transition-duration: 0.4s;
+}
+
+#button-brownies:hover {
+  background-color: var(--primary);
+}
+
+#button-cookies {
+  position: relative;
+  font-size: 12px;
+  color: black;
+  background: peachpuff;
+  border: 1px solid black;
+  border-radius: 12px;
+  margin: 1rem;
+  padding: 10px;
+  left: 1300px;
+  transition-duration: 0.4s;
+}
+
+#button-cookies:hover {
+  background-color: var(--primary);
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 7%;
+  background-color: var(--primary);
+  border-top: 1px solid #000000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+footer .socialmedia {
+  text-align: left;
+  padding: 1rem 0;
+}
+
+footer .socialmedia a {
+  color: #000000;
+  display: inline-block;
+  margin: 0.1rem;
+}
+
+footer .socialmedia a:hover {
+  color: var(--bg);
+}
+
+footer .customore-care {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer .customore-care p {
+  color: #000000;
+  display: inline-block;
+  margin: 0.1rem;
+}
+
+/* Media Queries*/
+
+/*Laptop*/
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+
+  .navbar,
+  footer {
+    padding: 0.3rem 5%;
+  }
+
+  .hauptbild #hauptbild-logo {
+    width: 800px;
+    height: 400px;
+  }
+
+  #menu-bild-brownies,
+  #menu-bild-cookies {
+    width: 250px;
+    height: 200px;
+  }
+
+  #button-brownies,
+  #button-cookies {
+    font-size: 10px;
+    padding: 8px;
+    left: 20%;
+  }
+}
+
+/*Tablet*/
+
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .navbar,
+  footer {
+    padding: 0.3rem 3%;
+  }
+
+  .hauptbild #hauptbild-logo {
+    width: 600px;
+    height: 300px;
+  }
+
+  #menu-bild-brownies,
+  #menu-bild-cookies {
+    width: 200px;
+    height: 150px;
+    left: 15%;
+  }
+
+  #button-brownies,
+  #button-cookies {
+    font-size: 10px;
+    padding: 8px;
+    left: 20%;
+  }
+}
+
+/*Mobile Phone*/
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  .navbar,
+  footer {
+    padding: 0.3rem 2%;
+  }
+
+  .hauptbild #hauptbild-logo {
+    width: 300px;
+    height: 150px;
+  }
+
+  #menu-bild-brownies,
+  #menu-bild-cookies {
+    width: 150px;
+    height: 120px;
+    left: 10%;
+  }
+
+  #button-brownies,
+  #button-cookies {
+    font-size: 8px;
+    padding: 6px;
+    left: 20%;
+  }
+}

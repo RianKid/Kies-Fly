@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kies&Fly</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/home/css/warenkorb.css">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar-menu">
+            <a href="#" id="hamburger-menu"> <i data-feather="menu"></i></a>
+        </div>
+        <div class="navbar-inhalt">
+            <h1 href="cookies" id="cookie-menu">Cookies</h1>
+            <h2 href="brownie" id="Brownie-menu">Brownies</h2>
+        </div>
+        <div class="navbar-logo">
+            <a href="index.html"><img class="navbar-img" src="img/logo.png" /></a>
+        </div>
+
+        <div class="navbar-extra">
+            <a href="#" id="search"> <i data-feather="search"></i></a>
+            <a href="../register/register.html" id="konto"> <i data-feather="user"></i></a>
+            <a href="/home/warenkorb.html" id="warenkorb">
+                <i data-feather="shopping-cart"> </i>
+            </a>
+            <a href="ubersetzen" id="ubersetzen"> <i data-feather="globe"></i></a>
+        </div>
+    </nav>
+
+    <!-- Navbar End   -->
+
+
+    <!-- Warenkorb start -->
+
+    <body>
+
+        <div id="container">
+            <div id="products">
+                <h2>Warenkorb</h2>
+                <div>
+                    <img src="/home/img/brownie.png" alt="Product 1" onclick="addToCart('Product 1', 5)">
+                    <img src="/home/img/kekse.png" alt="Product 2" onclick="addToCart('Product 2', 5)">
+                </div>
+                <div>
+                    <img src="/home/img/kekse.png" alt="Product 2" onclick="addToCart('Product 2', 5)">
+                    <img src="/home/img/brownie.png" alt="Product 1" onclick="addToCart('Product 1', 5)">
+                </div>
+            </div>
+
+            <div id="cart">
+                <h2>Zusammenfassung</h2>
+                <p class="cart-element">Subtotal: €<span id="subtotal">0.00</span></p>
+                <p class="cart-element">Lieferung: €<span id="delivery">5.00</span></p>
+                <p class="cart-element">Total: €<span id="total">0.00</span></p>
+                <button id="bezahlen" onclick="bezahlen()">Bezahlen</button>
+            </div>
+        </div>
+
+
+
+        <!--Warenkorb End-->
+
+
+        <!-- Footer Start -->
+        <footer>
+            <div class="socialmedia">
+                <p>About Us</p>
+                <a href="https://www.instagram.com/kiesandfly/" id="instagram"> <i data-feather="instagram"></i></a>
+                <a href="#" id="facebook"> <i data-feather="facebook"></i></a>
+                <a href="#" id="twitter"> <i data-feather="twitter"></i></a>
+            </div>
+            <div class="custumore-care">
+                <a href="Customer care.html">Customer Care <i data-feather="phone"></i></a>
+                <p>Help & Control</p>
+            </div>
+            <div class="recht">
+                <a href="#" id="copyright"></a>
+                &copy; 2023 Kies & Fly. Alle Rechte vorbehalten</a>
+            </div>
+        </footer>
+        <!-- Footer End -->
+        <!-- Feather Icons -->
+        <script>
+            feather.replace();
+        </script>
+        <!-- JavaScript -->
+        <script src="js/java.js"></script>
+
+        <script>
+            let subtotal = 0;
+            const deliveryCost = 5;
+
+            function addToCart(productName, price) {
+                subtotal += price;
+                updateCart();
+            }
+
+            function updateCart() {
+                const subtotalElement = document.getElementById('subtotal');
+                const deliveryElement = document.getElementById('delivery');
+                const totalElement = document.getElementById('total');
+
+                // Update the subtotal
+                subtotalElement.textContent = subtotal.toFixed(2);
+
+                // Update the total (subtotal + delivery cost)
+                const total = subtotal + deliveryCost;
+                totalElement.textContent = total.toFixed(2);
+
+                // Update the delivery cost
+                deliveryElement.textContent = deliveryCost.toFixed(2);
+            }
+            function bezahlen() {
+                // Perform actions when the "Pay" button is clicked
+                alert('Zahlung erfolgreich!'); // You can replace this with your payment logic
+            }
+        </script>
+    </body>
+
+</html>
